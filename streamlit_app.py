@@ -3,7 +3,7 @@ import keras
 import deploy
 
 
-loaded = keras.models.load_model("/text_generator_gigantic")
+loaded = keras.models.load_model("text_generator_gigantic")
 
 #===========================================#
 #              Streamlit Code               #
