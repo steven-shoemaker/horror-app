@@ -25,11 +25,10 @@ def remote_css(url):
 local_css("style.css")
 remote_css('https://fonts.googleapis.com/icon?family=Material+Icons')
 
-
-num_words= st.number_input('Number of Words', min_value=1, max_value=35, value=15)
-seed = st.text_input('Enter your Name (can leave blank)')
+st.subheader("Enter your name:")
+seed = st.text_input('')
 
 if st.button('Generate Text'):
-    generated_text = deploy.generate_text(seed, num_words, loaded, 76)
+    generated_text = deploy.generate_text(seed, 30, loaded, 76)
     st.subheader("Your Terrible Movie:")
     st.write(generated_text)
