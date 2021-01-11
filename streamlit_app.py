@@ -1,10 +1,4 @@
-import torch
-from transformers import GPT2Tokenizer, GPT2LMHeadModel, AdamW, get_linear_schedule_with_warmup
-import numpy as np
-import os
-import random
 import streamlit as st
-from transformers import AutoTokenizer, AutoModelWithLMHead
 
 
 def local_css(file_name):
