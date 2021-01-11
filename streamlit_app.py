@@ -17,7 +17,7 @@ st.markdown("<b>Note, this app is still in-development so you may receive cut of
 st.write(desc)
 
 st.subheader("Enter the name of your film and hit enter:")
-prompt = st.text_input("") + " is a movie about"
+prompt = st.text_input("") + " is a"
 
 import requests
 import json
