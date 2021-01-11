@@ -20,8 +20,6 @@ if st.button('Scare Me'):
     payload = json.dumps(prompt)
     headers = {"Content-Type": "application/json", "Authorization": "Bearer <YOUR_API_KEY>"}
     response = requests.post(API_URL, payload, headers=headers)
-    print(response.json())
-                                )
+    st.write(response.json())
     st.subheader(prompt[:-9])
-    for i, sample_output in enumerate(sample_outputs):
-            st.write("{}\n\n".format(tokenizer.decode(sample_output, skip_special_tokens=True)))
+                                )
