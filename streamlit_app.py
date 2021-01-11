@@ -26,7 +26,7 @@ import time
 payload = json.dumps(prompt)
 
 
-API_URL = "https://api-inference.huggingface.co/models/stevenshoemaker/horror"
+API_URL = "https://api-inference.huggingface.co/models/stevenshoemaker/horrors"
 
 if st.button('Scare Me'):
      if len(prompt) > 0: 
