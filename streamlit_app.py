@@ -12,9 +12,9 @@ st.title('The Pitch Doctor')
 
 st.write(desc)
 
-import requests
-import json
-API_URL = "https://api-inference.huggingface.co/models/stevenshoemaker/horror"
+
+prompt = st.text_input("") + " is about"
+
 
 if st.button('Scare Me'):
     payload = json.dumps(prompt)
