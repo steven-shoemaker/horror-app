@@ -35,7 +35,7 @@ if st.button('Scare Me'):
           response = requests.post(API_URL, payload, headers=headers)
           movie = response.json()[0]["generated_text"]
           st.subheader(prompt[:-17]) 
-          st.write(movie.split(".")[1])
+          st.write(movie.split(".")[0])
      else: 
          st.write("Please hit enter in the text box above to save your title.")
   
