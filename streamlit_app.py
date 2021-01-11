@@ -22,7 +22,7 @@ def remote_css(url):
 local_css("style.css")
 tokenizer = GPT2Tokenizer.from_pretrained("stevenshoemaker/horror")
 
-model = AutoModelWithLMHead.from_pretrained("stevenshoemaker/horror")
+model = GPT2LMHeadModel.from_pretrained("stevenshoemaker/horror")
 device = torch.device("cpu")
 
 model = model.to(device)
