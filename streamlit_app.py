@@ -25,11 +25,14 @@ import json
 import time
 API_URL = "https://api-inference.huggingface.co/models/stevenshoemaker/horror"
 
-if st.button('Scare Me'):
-    payload = json.dumps(prompt)
-    headers = {"Content-Type": "application/json", "Authorization": "Bearer <YOUR_API_KEY>"}
-    response = requests.post(API_URL, payload, headers=headers)
-    time.sleep(1)
-    st.subheader(prompt[:-17]) 
-    st.write(response.json()[0]["generated_text"])
+if len(prompt) > 0: 
+    if st.button('Scare Me'):
+        payload = json.dumps(prompt)
+        headers = {"Content-Type": "application/json", "Authorization": "Bearer <YOUR_API_KEY>"}
+        response = requests.post(API_URL, payload, headers=headers)
+        time.sleep(1)
+        st.subheader(prompt[:-17]) 
+        st.write(response.json()[0]["generated_text"])
+    else: 
+        st.write("Please hit enter in the text box above to save your title.")
   
