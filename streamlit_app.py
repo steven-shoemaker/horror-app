@@ -21,4 +21,4 @@ if st.button('Scare Me'):
     headers = {"Content-Type": "application/json", "Authorization": "Bearer <YOUR_API_KEY>"}
     response = requests.post(API_URL, payload, headers=headers)
     st.write(response.json())
-    st.subheader(prompt[:-9]) )
+    st.subheader(prompt[:-9]) 
