@@ -20,7 +20,7 @@ def remote_css(url):
     st.markdown(f'<link href="{url}" rel="stylesheet">', unsafe_allow_html=True)
 
 local_css("style.css")
-tokenizer = AutoTokenizer.from_pretrained("stevenshoemaker/horror")
+tokenizer = GPT2Tokenizer.from_pretrained("stevenshoemaker/horror")
 
 model = AutoModelWithLMHead.from_pretrained("stevenshoemaker/horror")
 device = torch.device("cpu")
