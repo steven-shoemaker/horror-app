@@ -28,9 +28,9 @@ API_URL = "https://api-inference.huggingface.co/models/stevenshoemaker/horror"
 if st.button('Scare Me'):
      if len(prompt) > 0: 
           payload = json.dumps(prompt)
+          time.sleep(1)
           headers = {"Content-Type": "application/json", "Authorization": "Bearer <YOUR_API_KEY>"}
           response = requests.post(API_URL, payload, headers=headers)
-          time.sleep(1)
           st.subheader(prompt[:-17]) 
           st.write(response.json()[0]["generated_text"])
      else: 
