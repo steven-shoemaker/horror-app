@@ -20,6 +20,8 @@ st.write(desc)
 st.subheader("Enter the name of your film and hit enter:")
 prompt = st.text_input("") + " is a movie about"
 
+payload = json.dumps(prompt)
+
 import requests
 import json
 import time
@@ -27,7 +29,6 @@ API_URL = "https://api-inference.huggingface.co/models/stevenshoemaker/horror"
 
 if st.button('Scare Me'):
      if len(prompt) > 0: 
-          payload = json.dumps(prompt)
           time.sleep(1)
           headers = {"Content-Type": "application/json", "Authorization": "Bearer <YOUR_API_KEY>"}
           response = requests.post(API_URL, payload, headers=headers)
