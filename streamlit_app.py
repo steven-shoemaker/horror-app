@@ -22,7 +22,7 @@ prompt = st.text_input("") + " is about"
 
 import requests
 import json
-API_URL = "https://api-inference.huggingface.co/models/stevenshoemaker/horror"
+API_URL = "https://api-inference.huggingface.co/models/stevenshoemaker/horrors"
 
 if st.button('Scare Me'):
     payload = json.dumps(prompt)
