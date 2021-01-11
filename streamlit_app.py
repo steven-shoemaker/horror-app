@@ -17,7 +17,7 @@ st.title('The Pitch Doctor')
 
 st.write(desc)
 
-st.subheader("Enter the name of your film:")
+st.subheader("Enter the name of your film and hit enter:")
 prompt = st.text_input("") + " is a movie about"
 
 import requests
