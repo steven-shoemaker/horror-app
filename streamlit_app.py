@@ -23,7 +23,7 @@ st.title('The Pitch Doctor')
 
 st.write(desc)
 
-
+st.subheader("Enter the name of your film:")
 prompt = st.text_input("") + " is about"
 
 import requests
@@ -34,5 +34,6 @@ if st.button('Scare Me'):
     payload = json.dumps(prompt)
     headers = {"Content-Type": "application/json", "Authorization": "Bearer <YOUR_API_KEY>"}
     response = requests.post(API_URL, payload, headers=headers)
-    st.write(response.json()[0]["generated_text"])
     st.subheader(prompt[:-9]) 
+    st.write(response.json()[0]["generated_text"])
+  
