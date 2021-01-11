@@ -33,6 +33,6 @@ if st.button('Scare Me'):
           time.sleep(1)
           st.subheader(prompt[:-17]) 
           st.write(response.json()[0]["generated_text"])
-          else: 
-              st.write("Please hit enter in the text box above to save your title.")
+     else: 
+         st.write("Please hit enter in the text box above to save your title.")
   
