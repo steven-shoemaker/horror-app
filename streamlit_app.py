@@ -34,7 +34,7 @@ if st.button('Scare Me'):
           response = requests.post(API_URL, payload, headers=headers)
           movie = response.json()[0]["generated_text"]
           st.subheader(prompt[:-17]) 
-          st.write(movie.split(".", 1)[0])
+          st.write(movie.split(".", 2)[0])
      except: 
          st.write("Our servers are dusting off some cobwebs, can you please submit your response again?")
   
