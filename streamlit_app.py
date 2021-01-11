@@ -18,7 +18,7 @@ st.title('The Pitch Doctor')
 st.write(desc)
 
 st.subheader("Enter the name of your film:")
-prompt = st.text_input("") + " is about"
+prompt = st.text_input("", "The Monster of Boggy Creek") + " is about"
 
 import requests
 import json
