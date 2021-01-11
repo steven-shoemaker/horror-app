@@ -29,13 +29,13 @@ payload = json.dumps(prompt)
 API_URL = "https://api-inference.huggingface.co/models/stevenshoemaker/horrors"
 
 if st.button('Scare Me'):
-     if len(prompt) > 0: 
+     try:
           time.sleep(1)
           headers = {"Content-Type": "application/json", "Authorization": "Bearer <YOUR_API_KEY>"}
           response = requests.post(API_URL, payload, headers=headers)
           movie = response.json()[0]["generated_text"]
           st.subheader(prompt[:-17]) 
           st.write(movie.split(".")[0])
-     else: 
-         st.write("Please hit enter in the text box above to save your title.")
+     except: 
+         st.write("Our servers are dusting off some cobwebs, can you please submit your response again?")
   
