@@ -25,7 +25,7 @@ import time
 payload = json.dumps(prompt)
 
 
-API_URL = "https://api-inference.huggingface.co/models/stevenshoemaker/horror"
+API_URL = "https://api-inference.huggingface.co/models/stevenshoemaker/horrors"
 
 if st.button('Scare Me'):
      try:
@@ -36,5 +36,5 @@ if st.button('Scare Me'):
           st.subheader(prompt[:-17]) 
           st.write(movie)
      except: 
-         st.write("Our servers are dusting off some cobwebs, can you please submit your response again?")
+         st.write("Our servers are dusting off some cobwebs, can you please try your response again or use a different movie name?")
   
