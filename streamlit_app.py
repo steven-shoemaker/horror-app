@@ -12,36 +12,15 @@ st.title('The Pitch Doctor')
 
 st.write(desc)
 
-def local_css(file_name):
-    with open(file_name) as f:
-        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-
-def remote_css(url):
-    st.markdown(f'<link href="{url}" rel="stylesheet">', unsafe_allow_html=True)
-
-local_css("style.css")
-tokenizer = AutoTokenizer.from_pretrained("stevenshoemaker/horror", revision="main")
-model = AutoModelWithLMHead.from_pretrained("stevenshoemaker/horror", revision="main")
-device = torch.device("cpu")
-
-model = model.to(device)
-
-st.subheader("Enter the name of your film:")
-model.eval()
-prompt = st.text_input("") + " is about"
-
-generated = torch.tensor(tokenizer.encode(prompt)).unsqueeze(0)
-generated = generated.to(device)
+import requests
+import json
+API_URL = "https://api-inference.huggingface.co/models/stevenshoemaker/horror"
 
 if st.button('Scare Me'):
-    sample_outputs = model.generate(
-        generated,
-         #bos_token_id=random.randint(1,30000),
-         do_sample=True,
-         top_k=40, 
-         max_length = 300,
-         top_p=0.98, 
-        num_return_sequences=1,
+    payload = json.dumps(prompt)
+    headers = {"Content-Type": "application/json", "Authorization": "Bearer <YOUR_API_KEY>"}
+    response = requests.post(API_URL, payload, headers=headers)
+    print(response.json())
                                 )
     st.subheader(prompt[:-9])
     for i, sample_output in enumerate(sample_outputs):
