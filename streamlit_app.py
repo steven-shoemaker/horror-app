@@ -18,7 +18,7 @@ st.write("Created by: [Steven Shoemaker](https://twitter.com/_stevenshoe)")
 st.write(desc)
 
 st.subheader("Enter the name of your film and hit enter:")
-prompt = st.text_input("") + " is about"
+prompt = st.text_input("") + " is a movie about"
 
 import requests
 import json
@@ -40,7 +40,7 @@ if st.button('Scare Me'):
           headers = {"Content-Type": "application/json", "Authorization": "Bearer <YOUR_API_KEY>"}
           response = requests.post(API_URL, payload, headers=headers)
           movie = response.json()[0]["generated_text"]
-          st.subheader(prompt[:-8]) 
+          st.subheader(prompt[:-17]) 
           movie = sentence_splitter.tokenize(movie)[:-1]
           st.markdown(' '.join(word for word in movie))
      except: 
