@@ -14,6 +14,7 @@ local_css("style.css")
 desc = "Uses a neural network trained on over *5000* horror movies to generate sometimes good, *mostly non-sensical* horror movie plots after being given a movie title. This program attempts it's best guess at generating a movie based on whatever title you give it. "
 st.title('The Pitch Doctor')
 st.markdown("<b>Note, this app is still in-development so you may receive cut off responses or other errors. Please be kind!</b>", unsafe_allow_html=True)
+st.write("Created by: [Steven Shoemaker](https://twitter.com/_stevenshoe)")
 st.write(desc)
 
 st.subheader("Enter the name of your film and hit enter:")
